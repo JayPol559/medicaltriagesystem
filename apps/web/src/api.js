@@ -1,15 +1,37 @@
 export const API_BASE = import.meta.env?.VITE_API_BASE || 'http://localhost:3001'
 
 async function request(path, options = {}) {
-  const res = await fetch(`${API_BASE}${path}`, {
-    headers: { 'Content-Type': 'application/json', ...(options.headers || {}) },
-    ...options,
-  })
-  if (!res.ok) throw new Error(await res.text())
-  return res.json()
+  try {
+    console.log(`Making request to: ${API_BASE}${path}`)
+    const res = await fetch(`${API_BASE}${path}`, {
+      headers: { 'Content-Type': 'application/json', ...(options.headers || {}) },
+      ...options,
+    })
+    
+    if (!res.ok) {
+      const errorText = await res.text()
+      console.error(`API Error (${res.status}):`, errorText)
+      throw new Error(`API Error: ${errorText || res.statusText}`)
+    }
+    
+    return res.json()
+  } catch (error) {
+    console.error('Request failed:', error)
+    if (error.name === 'TypeError' && error.message.includes('fetch')) {
+      throw new Error('Unable to connect to server. Please check your internet connection.')
+    }
+    throw error
+  }
 }
 
 export const api = {
+  // Auth endpoints
+  register: (data) => request(`/auth/register`, { method: 'POST', body: JSON.stringify(data) }),
+  login: (email, password) => request(`/auth/login`, { method: 'POST', body: JSON.stringify({ email, password }) }),
+  profile: (token) => request(`/auth/profile`, { headers: { Authorization: `Bearer ${token}` } }),
+  validateToken: (token) => request(`/auth/validate`, { method: 'POST', body: JSON.stringify({ token }) }),
+  
+  // Core endpoints
   doctors: () => request(`/doctors`),
   patients: () => request(`/patients`),
   patientUpcoming: (id) => request(`/patients/${encodeURIComponent(id)}/upcoming`),
