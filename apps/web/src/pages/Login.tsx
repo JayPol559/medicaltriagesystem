@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useMutation } from '@tanstack/react-query'
-import { api } from '../api'
+import { api, API_BASE } from '../api'
 
 export default function Login({ onLogin }: { onLogin: (user: any, token: string) => void }) {
   const [email, setEmail] = useState('')
@@ -12,7 +12,7 @@ export default function Login({ onLogin }: { onLogin: (user: any, token: string)
 
   const login = useMutation({
     mutationFn: (data: { email: string; password: string }) =>
-      fetch(`http://localhost:3001/auth/login`, {
+      fetch(`${API_BASE}/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
@@ -28,7 +28,7 @@ export default function Login({ onLogin }: { onLogin: (user: any, token: string)
 
   const register = useMutation({
     mutationFn: (data: { email: string; password: string; name: string; role: string; phone?: string }) =>
-      fetch(`http://localhost:3001/auth/register`, {
+      fetch(`${API_BASE}/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
