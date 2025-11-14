@@ -1,77 +1,81 @@
-# 🏥 Medical Triage System
+# Medical Triage System
 
-> **Smart Queue Management for Modern Healthcare**  
-> A comprehensive hospital management system built for efficiency, real-time updates, and seamless patient experience.
+**Intelligent Queue Management for Healthcare Facilities**
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-medicaltriagesystem.netlify.app-blue?style=for-the-badge)](https://medicaltriagesystem.netlify.app)
-[![API Docs](https://img.shields.io/badge/📚_API_Docs-medical--triage--api.onrender.com/swagger-green?style=for-the-badge)](https://medical-triage-api.onrender.com/swagger)
-[![GitHub](https://img.shields.io/badge/⭐_Star_on_GitHub-girish060/medicaltriagesystem-yellow?style=for-the-badge)](https://github.com/girish060/medicaltriagesystem)
+A comprehensive hospital management system designed for operational efficiency, real-time patient flow management, and improved healthcare delivery.
 
-## 🎯 **Hackathon Project Overview**
+[![Live Demo](https://img.shields.io/badge/Live_Demo-medicaltriagesystem.netlify.app-blue)](https://medicaltriagesystem.netlify.app)
+[![API Documentation](https://img.shields.io/badge/API_Docs-medical--triage--api.onrender.com/swagger-green)](https://medical-triage-api.onrender.com/swagger)
+[![Repository](https://img.shields.io/badge/Repository-GitHub-black)](https://github.com/girish060/medicaltriagesystem)
 
-**Problem Solved:** Long hospital queues, inefficient patient flow, and lack of real-time updates in healthcare facilities.
+## Overview
 
-**Solution:** An intelligent triage system that automates queue management, prioritizes emergencies, and provides real-time updates to all stakeholders.
+**Problem Statement:** Healthcare facilities face challenges with patient queue management, inefficient patient flow, and lack of real-time operational visibility.
 
-**Impact:** Reduces patient wait times by 40%, improves staff efficiency, and enhances overall healthcare delivery experience.
+**Solution:** An intelligent triage system that automates queue management, prioritizes critical cases, and provides real-time updates across all stakeholder interfaces.
 
-## ✨ **Key Features**
+**Key Metrics:** 
+- 40% reduction in average patient wait times
+- 60% improvement in staff operational efficiency
+- Real-time visibility into hospital operations
 
-### 🚀 **Core Functionality**
-- **Smart Queue Management** - Automated patient flow with AI-driven optimization
-- **Emergency Prioritization** - Instant bypass for critical cases with automated alerts
-- **QR Code Integration** - Contactless check-in and appointment verification
-- **Real-time Updates** - Live synchronization across all devices using WebSocket
-- **Multi-Role Dashboards** - Specialized interfaces for different user types
-- **Auto-Swap System** - Intelligent rescheduling for no-shows (15-min timeout)
+## Features
 
-### 👥 **User Roles**
-| Role | Capabilities |
-|------|-------------|
-| **Patient** | Book appointments, track queue position, receive notifications |
-| **Doctor** | Manage patient queue, start/complete consultations, emergency alerts |
-| **Reception** | Check-in patients, manage walk-ins, queue oversight |
-| **Admin** | System monitoring, analytics, user management |
+### Core Functionality
+- **Queue Management** - Automated patient flow optimization
+- **Emergency Prioritization** - Critical case prioritization with alerts
+- **QR Code Integration** - Contactless check-in and verification
+- **Real-time Updates** - Live synchronization via WebSocket
+- **Role-Based Access** - Specialized interfaces for different user types
+- **Automatic Rescheduling** - Intelligent handling of no-shows
 
-## 🛠️ **Technology Stack**
+### User Roles
+| Role | Responsibilities |
+|------|-----------------|
+| Patient | Appointment booking, queue tracking, notifications |
+| Doctor | Queue management, consultation handling, emergency alerts |
+| Reception | Patient check-in, walk-in management, queue oversight |
+| Administrator | System monitoring, analytics, user management |
 
-### **Frontend** (React + JavaScript)
-```
-React 18 • Vite • TailwindCSS • React Query • Socket.IO Client
-```
+## Technology Stack
 
-### **Backend** (NestJS + TypeScript)
-```
-NestJS • Prisma ORM • PostgreSQL • Socket.IO • JWT Auth • Swagger
-```
+### Frontend
+- React 18
+- Vite
+- TailwindCSS
+- React Query
+- Socket.IO Client
 
-### **Deployment & Infrastructure**
-```
-Netlify (Frontend) • Render (Backend) • Supabase (Database) • GitHub Actions
-```
+### Backend
+- NestJS
+- Prisma ORM
+- PostgreSQL
+- Socket.IO
+- JWT Authentication
+- Swagger/OpenAPI
 
-## 🚀 **Live Demo**
+### Infrastructure
+- Netlify (Frontend Hosting)
+- Render (Backend Hosting)
+- Supabase (Database)
+- GitHub Actions (CI/CD)
 
-### **🌐 Web Application**
-**URL:** https://medicaltriagesystem.netlify.app
+## Deployment
 
-**Test Credentials:**
-- **Doctor:** `doctor@hospital.com` / `password123`
-- **Patient:** `patient@hospital.com` / `password123`
-- **Admin:** `admin@hospital.com` / `admin123`
+### Live Environments
+- **Web Application:** https://medicaltriagesystem.netlify.app
+- **API Documentation:** https://medical-triage-api.onrender.com/swagger
+- **Repository:** https://github.com/girish060/medicaltriagesystem
 
-### **📚 API Documentation**
-**URL:** https://medical-triage-api.onrender.com/swagger
+## Getting Started
 
-## ⚡ **Quick Start**
+### Prerequisites
+- Node.js 18 or higher
+- pnpm 8 or higher
 
-### **Prerequisites**
-- Node.js 18+
-- pnpm 8+
-
-### **Installation**
+### Installation
 ```bash
-# Clone repository
+# Clone the repository
 git clone https://github.com/girish060/medicaltriagesystem.git
 cd medicaltriagesystem
 
@@ -83,116 +87,119 @@ pnpm --filter api dev    # Terminal 1: API (Port 3000)
 pnpm --filter web dev    # Terminal 2: Web (Port 5173)
 ```
 
-### **Access Points**
-- **Web App:** http://localhost:5173
-- **API:** http://localhost:3000
-- **API Docs:** http://localhost:3000/swagger
+### Local Access
+- **Web Application:** http://localhost:5173
+- **API Server:** http://localhost:3000
+- **API Documentation:** http://localhost:3000/swagger
 
-## 📁 **Project Structure**
+## Project Structure
 
 ```
 medical-triage-system/
-├── 🎯 apps/
-│   ├── 🔧 api/                 # NestJS Backend
+├── apps/
+│   ├── api/                    # NestJS Backend
 │   │   ├── src/modules/        # Feature modules
-│   │   ├── prisma/            # Database schema
-│   │   └── scripts/           # Utility scripts
-│   └── 🎨 web/                # React Frontend
-│       ├── src/pages/         # Route components
-│       └── src/               # Core application
-├── 📦 packages/               # Shared packages
-├── 🚀 infra/                 # Docker & deployment
-└── 📚 docs/                  # Documentation
+│   │   ├── prisma/             # Database schema & migrations
+│   │   └── src/                # Core application logic
+│   └── web/                    # React Frontend
+│       ├── src/pages/          # Page components
+│       ├── src/components/     # Reusable components
+│       └── src/                # Core application
+├── packages/                   # Shared packages
+├── infra/                      # Infrastructure & Docker
+└── docs/                       # Documentation
 ```
 
-## 🎨 **Screenshots & Demo**
+## System Features
 
-### **Dashboard Overview**
-- **Patient Dashboard:** Real-time queue position and appointment management
-- **Doctor Dashboard:** Patient queue with emergency alerts and consultation tools
-- **Admin Panel:** System analytics and user management
-- **QR Scanner:** Mobile-optimized scanning interface
+### Dashboard Overview
+- **Patient Portal**: Self-service appointment scheduling and real-time queue tracking
+- **Clinical Interface**: Provider dashboard for patient flow management
+- **Administration Console**: Comprehensive system monitoring and user management
+- **Mobile Check-in**: QR code-based patient registration and verification
+1. **Appointment Management**: Online scheduling → Automated reminders → Digital check-in
+2. **Emergency Response**: Triage prioritization → Instant notifications → Streamlined care pathways
+3. **Operational Intelligence**: Real-time analytics → Performance metrics → Capacity planning
 
-### **Key Workflows**
-1. **Appointment Booking** → QR Code Generation → Check-in → Queue Management
-2. **Emergency Handling** → Priority Queue → Instant Alerts → Fast-track Treatment
-3. **Real-time Updates** → WebSocket Sync → Multi-device Notifications
+## Technical Implementation
 
-## 🏆 **Hackathon Highlights**
+### Architecture Highlights
+- **Real-time Communication**: WebSocket-based synchronization
+- **Contactless Operations**: QR code integration for reduced physical contact
+- **Priority Management**: Dynamic queue optimization for emergency cases
+- **Cross-platform**: Responsive design for all device types
 
-### **Innovation Points**
-- ✅ **Real-time Synchronization** using WebSocket technology
-- ✅ **QR Code Integration** for contactless operations
-- ✅ **Emergency Prioritization** with intelligent queue management
-- ✅ **Progressive Web App** with offline capabilities
-- ✅ **Responsive Design** optimized for mobile and desktop
+### Technical Stack
+- **Type Safety**: Full-stack TypeScript implementation
+- **Modular Architecture**: Service-oriented design for maintainability
+- **Containerization**: Docker support for consistent deployments
+- **Security**: JWT authentication and input validation
 
-### **Technical Excellence**
-- ✅ **Full-stack TypeScript** for type safety
-- ✅ **Modern Architecture** with microservices approach
-- ✅ **Production Ready** with Docker and CI/CD
-- ✅ **Scalable Design** supporting multiple hospitals
-- ✅ **Security First** with JWT auth and input validation
+### Operational Benefits
+- **Efficiency**: Streamlined patient flow management
+- **Productivity**: Automated administrative tasks
+- **Visibility**: Comprehensive operational dashboards
+- **Compliance**: Audit trails and access controls
 
-### **Business Impact**
-- 📈 **40% reduction** in patient wait times
-- 🚀 **60% improvement** in staff efficiency  
-- 💡 **Real-time visibility** into hospital operations
-- 🎯 **Emergency response** optimization
+## API Documentation
 
-## 🔗 **API Endpoints**
-
-### **Core Features**
+### Core Endpoints
 ```http
-POST /appointments          # Create appointment
-GET  /appointments/queue    # Get doctor's queue
-POST /appointments/:id/arrive    # Patient check-in
-POST /emergency            # Raise emergency alert
-GET  /notifications        # Get real-time updates
+POST   /appointments          # Schedule new appointments
+GET    /appointments/queue    # Retrieve provider queue
+POST   /appointments/:id/arrive    # Process patient check-in
+POST   /emergency            # Trigger emergency protocol
+GET    /notifications        # Access notification history
 ```
 
-### **Real-time Events**
-```javascript
-socket.on('queue:update')        // Queue position changes
-socket.on('emergency:alert')     // Emergency notifications  
-socket.on('appointment:status')  // Status updates
+### Real-time Events
+```typescript
+interface QueueEvent {
+  event: 'queue:update' | 'emergency:alert' | 'appointment:status';
+  data: any;
+  timestamp: string;
+}
 ```
 
-## 🌟 **Future Enhancements**
+## Roadmap
 
-- 📱 **Mobile App** (React Native)
-- 🤖 **AI-powered Queue Optimization**
-- 🌍 **Multi-language Support**
-- 📊 **Advanced Analytics Dashboard**
-- 🔗 **Hospital System Integration**
-- 🎥 **Telemedicine Features**
+### Planned Features
+- Mobile application for on-the-go access
+- Machine learning for queue optimization
+- Multi-language and localization support
+- Enhanced reporting and analytics
+- HL7/FHIR integration capabilities
+- Virtual consultation modules
 
-## 👨‍💻 **Team & Contact**
+## Contact
 
-**Developer:** Girish Chaudhary  
-**Email:** girishchaudhary2006@gmail.com  
-**GitHub:** [@girish060](https://github.com/girish060)  
-**LinkedIn:** [Connect with me](https://linkedin.com/in/girish060)
+For inquiries and support, please contact the development team through the project's GitHub repository.
 
-## 📄 **License**
+## License
 
-MIT License - Built with ❤️ for better healthcare delivery
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
+## Deployment
 
-### 🏆 **Ready for Production • Hackathon Optimized • Healthcare Innovation**
+### Prerequisites
+- PostgreSQL database
+- Redis server (for job queue)
+- SMTP server or email service
+- SSL certificates
 
-## 🚢 Deployment Checklist
+### Setup
+1. Configure environment variables
+2. Run database migrations:
+   ```bash
+   pnpm --filter api prisma migrate deploy
+   ```
+3. Build and start the application:
+   ```bash
+   pnpm build
+   pnpm start
+   ```
 
-- [ ] Set production `DATABASE_URL` (Postgres recommended)
-- [ ] Configure Redis for BullMQ jobs
-- [ ] Set up Twilio/Firebase/SMTP for notifications
-- [ ] Add Google Maps API key for travel ETA
-- [ ] Enable HTTPS with SSL certificates
-- [ ] Set up monitoring (e.g., Sentry, Datadog)
-- [ ] Configure CORS for production domains
-- [ ] Run database migrations: `prisma migrate deploy`
-- [ ] Seed initial data or import from existing system
+For detailed deployment instructions, refer to the [deployment guide](DEPLOYMENT.md).
 - [ ] Test all user flows end-to-end
 - [ ] Set up automated backups
 
