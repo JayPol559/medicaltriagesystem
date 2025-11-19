@@ -65,7 +65,7 @@ A comprehensive hospital management system designed for operational efficiency, 
 ### Live Environments
 - **Web Application:** https://medicaltriagesystem.netlify.app
 - **API Documentation:** https://medical-triage-api.onrender.com/swagger
-- **Repository:** https://github.com/girish060/medicaltriagesystem
+- **Repository:** https://github.com/JayPol559/medicaltriagesystem
 
 ## Getting Started
 
